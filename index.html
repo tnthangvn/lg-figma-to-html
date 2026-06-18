@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>初代パジェロ — HISTORY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #FF9D00;
+      --text: #DADADA;
+      --white: #FFFFFF;
+      --bg: #000000;
+      --spec-bg: rgba(255, 255, 255, 0.06);
+      --glow: 0 0 4px rgba(255, 157, 0, 0.9);
+      --font-jp: 'Noto Sans JP', sans-serif;
+      --font-mmc: 'MMC', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-jp);
+      overflow-x: hidden;
+    }
+
+    /* PAGE */
+    .page {
+      position: relative;
+      width: 1366px;
+      margin: 0 auto;
+      padding-top: 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      display: flex;
+      align-items: stretch;
+      z-index: 50;
+    }
+
+    .header-logo {
+      width: 115px;
+      height: 100px;
+      flex-shrink: 0;
+    }
+
+    .header-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .header-spacer {
+      flex: 1;
+    }
+
+    .header-menu {
+      width: 115px;
+      height: 100px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .header-menu img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* YEAR OVERLAY */
+    .year-overlay {
+      position: absolute;
+      top: 291px;
+      left: 71px;
+      width: 188px;
+      height: 48px;
+      z-index: 20;
+      pointer-events: none;
+    }
+
+    .year-number {
+      font-family: var(--font-mmc);
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-shadow: var(--glow);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .year-bar {
+      position: absolute;
+      left: 135px;
+      top: 24px;
+      width: 53px;
+      height: 2px;
+      background: var(--accent);
+      box-shadow: var(--glow);
+    }
+
+    /* HERO */
+    .hero {
+      width: 100%;
+      height: 647px;
+      flex-shrink: 0;
+    }
+
+    .hero-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 1100px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-inner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 1100px;
+      box-shadow: inset 0 0 120px 80px rgba(0, 0, 0, 1);
+      pointer-events: none;
+    }
+
+    /* CONTENT WRAPPER */
+    .content-wrapper {
+      width: 958px;
+      margin-top: -153px;
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 72px;
+    }
+
+    /* GENERATION HEADER */
+    .gen-header {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      gap: 24px;
+    }
+
+    .gen-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: fit-content;
+    }
+
+    .year-label {
+      font-family: var(--font-jp);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-shadow: var(--glow);
+    }
+
+    .gen-name {
+      font-family: var(--font-jp);
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-shadow: var(--glow);
+    }
+
+    .text-sections {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      gap: 100px;
+    }
+
+    .main-text-block {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      gap: 32px;
+    }
+
+    .sec-heading {
+      font-family: var(--font-jp);
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 1.5;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    .body-text {
+      font-family: var(--font-jp);
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.8;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    .sub-sections {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      gap: 24px;
+    }
+
+    .sub-block {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      gap: 12px;
+    }
+
+    .sub-heading {
+      font-family: var(--font-jp);
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    /* SPEC OUTER */
+    .spec-outer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: stretch;
+      gap: 64px;
+    }
+
+    .spec-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: stretch;
+      gap: 42px;
+      padding: 40px 0 50px;
+      background: var(--spec-bg);
+    }
+
+    .spec-model-code {
+      font-family: var(--font-mmc);
+      font-weight: 500;
+      font-size: 21px;
+      line-height: 1.25;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .spec-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 19px;
+    }
+
+    .spec-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .spec-lbl {
+      font-family: var(--font-jp);
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      width: 240px;
+      flex-shrink: 0;
+    }
+
+    .spec-lbl--md {
+      font-family: var(--font-jp);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      width: 240px;
+      flex-shrink: 0;
+    }
+
+    .spec-val {
+      font-family: var(--font-mmc);
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      width: 300px;
+    }
+
+    .spec-val--w {
+      font-family: var(--font-mmc);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 1.3;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      width: 300px;
+    }
+
+    .spec-val--jp {
+      font-family: var(--font-jp);
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.5;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      width: 300px;
+    }
+
+    .spec-engine {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-bottom: 9px;
+      width: 300px;
+    }
+
+    .spec-engine-type {
+      font-family: var(--font-jp);
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    .spec-engine-line {
+      font-family: var(--font-mmc);
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      height: 26px;
+      display: flex;
+      align-items: center;
+    }
+
+    .spec-engine-line--fill {
+      font-family: var(--font-mmc);
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    .spec-hr {
+      width: 780px;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.2) 6%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.2) 94%);
+      opacity: 0.2;
+      flex-shrink: 0;
+    }
+
+    /* BOTTOM SECTION — bleeds to full 1366px, symmetric & centered */
+    .bottom-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 200px;
+      align-self: stretch;                          /* = 958px của content-wrapper */
+      margin-left: calc((958px - 1366px) / 2);      /* -204px */
+      margin-right: calc((958px - 1366px) / 2);     /* -204px → tổng 1366px, canh giữa đều 2 bên */
+    }
+
+    /* TIMELINE NAV */
+    .timeline-nav {
+      display: flex;
+      align-items: center;
+      gap: 68px;
+    }
+
+    .nav-prev,
+    .nav-next {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-lbl {
+      font-family: var(--font-mmc);
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-lbl--prev {
+      color: #383838;
+    }
+
+    .nav-lbl--next {
+      color: var(--accent);
+      text-shadow: var(--glow);
+    }
+
+    .nav-yr {
+      font-family: var(--font-mmc);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-shadow: 0 0 7px rgba(255, 157, 0, 0.7);
+    }
+
+    /* GALLERY SECTION */
+    .gallery-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: stretch;
+      gap: 120px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 50px;
+    }
+
+    .pill-btn {
+      width: 228px;
+      height: 48px;
+      background: #000;
+      border: 0.8px solid var(--accent);
+      box-shadow: 0 0 32px 3px rgba(255, 157, 0, 0.23);
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .pill-btn-arrow {
+      width: 0;
+      height: 0;
+      border-top: 3.5px solid transparent;
+      border-bottom: 3.5px solid transparent;
+      border-right: 5px solid var(--accent);
+      flex-shrink: 0;
+    }
+
+    .pill-btn-text {
+      font-family: var(--font-jp);
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+
+    /* FOLLOW + FOOTER */
+    /* FOOTER — block cấp .page, tự canh giữa (1366px), full-bleed */
+    .footer-block {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      margin-top: 120px;   /* thay cho gap cũ giữa pill buttons và FOLLOW */
+    }
+
+    .follow-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      padding: 0 173px 120px;
+    }
+
+    .follow-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .follow-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+      width: 242px;
+    }
+
+    .follow-title {
+      font-family: var(--font-mmc);
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .follow-sub {
+      font-family: var(--font-jp);
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 2.8;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-align: left;
+    }
+
+    /* Social icons image */
+    .social-icons {
+      width: 312px;
+      height: 42px;
+      display: block;
+    }
+
+    /* BACK TO TOP */
+    .back-btn {
+      width: 100%;
+      height: 60px;
+      background: #D3D3D3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 4px #ED0000;
+    }
+
+    .back-btn-text {
+      font-family: var(--font-jp);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      color: #000;
+    }
+
+    .back-btn-text--mobile {
+      display: none;
+    }
+
+    /* FOOTER CAR */
+    .footer-car {
+      width: 100%;
+      height: 645px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* MOBILE COPYRIGHT — hidden on desktop */
+    .mobile-copyright {
+      display: none;
+    }
+
+    /* ═══════════════════════════
+       MOBILE  ≤ 768px
+    ═══════════════════════════ */
+    @media (max-width: 768px) {
+      .page {
+        width: 375px;
+        padding-top: 0;
+        align-items: flex-start;
+      }
+
+      .site-header {
+        height: 72px;
+      }
+
+      .header-logo {
+        width: 73px;
+        height: 63px;
+      }
+
+      .header-menu {
+        position: absolute;
+        right: 0;
+        left: auto;
+        top: 0;
+        width: 83px;
+        height: 72px;
+      }
+
+      .year-overlay {
+        top: 88px;
+        left: 14px;
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .year-number {
+        position: static;
+        font-size: 19.25px;
+      }
+
+      .year-bar {
+        position: static;
+        width: 18px;
+        height: 1px;
+      }
+
+      .hero {
+        height: 296px;
+      }
+
+      .hero-inner {
+        border-radius: 298px;
+        opacity: 0.6;
+      }
+
+      .hero-inner::after {
+        border-radius: 298px;
+        box-shadow: inset 0 0 33px 22px rgba(0, 0, 0, 1);
+      }
+
+      .content-wrapper {
+        width: 375px;
+        margin-top: 0;
+        padding: 0 24px;
+        gap: 24px;
+      }
+
+      .sec-heading {
+        font-size: 22px;
+      }
+
+      .spec-card {
+        gap: 32px;
+        padding: 36px 0 41px;
+      }
+
+      .spec-grid {
+        gap: 14px;
+      }
+
+      .spec-hr {
+        width: 100%;
+        max-width: 290px;
+      }
+
+      .spec-row {
+        align-items: flex-start;
+        width: 290px;
+      }
+
+      .spec-lbl,
+      .spec-lbl--md {
+        width: 110px;
+        font-size: 11px;
+      }
+
+      .spec-val,
+      .spec-val--w,
+      .spec-val--jp {
+        width: 170px;
+        font-size: 11px;
+      }
+
+      .spec-engine {
+        width: 170px;
+      }
+
+      .spec-engine-type,
+      .spec-engine-line,
+      .spec-engine-line--fill {
+        font-size: 11px;
+      }
+
+      .spec-engine-line {
+        height: auto;
+      }
+
+      .bottom-section {
+        width: auto;
+        margin-inline: -24px;   /* bleed out of content-wrapper's 24px padding → full 375px */
+        gap: 60px;
+      }
+
+      .btn-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 24px;
+        width: 100%;
+        padding: 0 24px;
+      }
+
+      .pill-btn {
+        width: 100%;
+      }
+
+      .pill-btn-text {
+        font-size: 14px;
+      }
+
+      .follow-wrap {
+        padding: 0 0 40px;
+      }
+
+      .follow-inner {
+        gap: 32px;
+      }
+
+      .follow-title {
+        font-size: 20px;
+      }
+
+      .follow-sub {
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        text-align: center;
+      }
+
+      .social-icons {
+        width: 264px;
+        height: 36px;
+      }
+
+      .footer-car {
+        display: none;
+      }
+
+      /* mobile back-to-top: swap text */
+      .back-btn-text--desktop {
+        display: none;
+      }
+
+      .back-btn-text--mobile {
+        display: inline;
+        font-family: var(--font-mmc);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: 0.05em;
+        color: #000;
+      }
+
+      /* Mobile copyright */
+      .mobile-copyright {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 375px;
+        height: 162px;
+        background: #000;
+      }
+
+      .mobile-copyright-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        padding: 50px 20px 0;
+        width: 335px;
+      }
+
+      .mobile-policy-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .mobile-policy-link {
+        font-family: var(--font-mmc);
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 1.2;
+        letter-spacing: 0.05em;
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      .mobile-copyright-text {
+        font-family: var(--font-mmc);
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 1.4;
+        letter-spacing: 0.05em;
+        color: var(--white);
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 375px) {
+      .page {
+        width: 100%;
+      }
+
+      .content-wrapper {
+        width: 100%;
+      }
+
+      .mobile-copyright {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="site-header" role="banner">
+      <a href="#" class="header-logo" aria-label="Mitsubishi Motors">
+        <img src="assets/images/logo.svg" data-src-desktop="assets/images/logo.svg"
+          data-src-mobile="assets/images/logo-sp.svg" alt="Mitsubishi Motors">
+      </a>
+      <div class="header-spacer"></div>
+      <button class="header-menu" aria-label="メニューを開く">
+        <img src="assets/images/menu-close.svg" data-src-desktop="assets/images/menu-close.svg"
+          data-src-mobile="assets/images/menu-sp.svg" alt="">
+      </button>
+    </header>
+
+    <!-- YEAR OVERLAY -->
+    <div class="year-overlay" aria-hidden="true">
+      <span class="year-number">1982</span>
+      <span class="year-bar"></span>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <img src="assets/images/hero-car-65b00d.png" alt="初代パジェロ">
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-wrapper">
+
+      <!-- GENERATION HEADER -->
+      <div class="gen-header">
+        <div class="gen-title-block">
+          <p class="year-label">1982.5 発売</p>
+          <h1 class="gen-name">初代パジェロ</h1>
+        </div>
+
+        <div class="text-sections">
+          <div class="main-text-block">
+            <h2 class="sec-heading">走破性と乗用車のような快適性の融合。<br>SUVという新ジャンルの誕生</h2>
+            <p class="body-text">
+              1982年5月に新世代の4WDモデルとして発売された初代モデル。長年のジープ生産で培った本格的な悪路走破性をベースにしながら、フロントに独立懸架サスペンションを採用し、オフロードだけでなく、普段使いでも快適に扱える高い高速安定性を実現。これにより、4WDを特殊な業務用の道具から「レクリエーション・ビークル（RV）」という新しいライフスタイルへと昇華させ、週末のキャンプ場には大量のアウトドアギアを積んだパジェロが並ぶという、日本の新たなオートキャンプ文化を創出した。
+            </p>
+          </div>
+
+          <div class="sub-sections">
+            <div class="sub-block">
+              <h3 class="sub-heading">小見出しが入ります。小見出しが入ります。</h3>
+              <p class="body-text">
+                本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。
+              </p>
+            </div>
+            <div class="sub-block">
+              <h3 class="sub-heading">小見出しが入ります。小見出しが入ります。</h3>
+              <p class="body-text">本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。本文が入ります。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPEC + BOTTOM -->
+      <div class="spec-outer">
+
+        <div class="spec-card">
+          <p class="spec-model-code">L040<br>SPEC</p>
+
+          <div class="spec-grid">
+
+            <div class="spec-row">
+              <span class="spec-lbl">駆動方式</span>
+              <span class="spec-val">4WD</span>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row">
+              <span class="spec-lbl">全長×全幅×全高(mm)</span>
+              <span class="spec-val--w">3930/1680/1860<br>（グレードにより前後）</span>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row">
+              <span class="spec-lbl">ホイールベース(mm)</span>
+              <span class="spec-val">2350</span>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row">
+              <span class="spec-lbl">車両重量(kg)</span>
+              <span class="spec-val">1450-1550</span>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row" style="align-items: flex-start;">
+              <span class="spec-lbl--md">エンジン</span>
+              <div class="spec-engine">
+                <span class="spec-engine-type">型式：G63B（ガソリンターボ）</span>
+                <span class="spec-engine-line">最高出力(PS/rpm)：145/5500</span>
+                <span class="spec-engine-line">最大トルク(kgf・m/rpm)：22.0/3000</span>
+                <span class="spec-engine-line--fill">変速機：5速マニュアル/4速オートマチック</span>
+              </div>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row">
+              <span class="spec-lbl">総排気量(L)</span>
+              <span class="spec-val--w">2.3</span>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row" style="align-items: flex-start;">
+              <span class="spec-lbl--md">エンジン</span>
+              <div class="spec-engine">
+                <span class="spec-engine-type">型式：4D55T（ディーゼルターボ）</span>
+                <span class="spec-engine-line">最高出力(PS/rpm)：84/3500</span>
+                <span class="spec-engine-line">最大トルク(kgf・m/rpm)：20.0/2000</span>
+                <span class="spec-engine-line--fill">変速機：5速マニュアル/4速オートマチック</span>
+              </div>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row">
+              <span class="spec-lbl">総排気量(L)</span>
+              <span class="spec-val--w">2.0</span>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row">
+              <span class="spec-lbl">フロントサスペンション</span>
+              <span class="spec-val--jp">フロントはベンチレーテッドディスク</span>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row">
+              <span class="spec-lbl">リアサスペンション</span>
+              <span class="spec-val--jp">車軸式（半楕円リーフスプリング）</span>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row">
+              <span class="spec-lbl">ブレーキ</span>
+              <span class="spec-val--jp">車軸式（半楕円リーフスプリング）</span>
+            </div>
+            <div class="spec-hr"></div>
+
+            <div class="spec-row">
+              <span class="spec-lbl">最小回転半径(m)</span>
+              <span class="spec-val--jp">5.2（非常に小回りがきく設計）</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- BOTTOM (1366px bleed) -->
+        <div class="bottom-section">
+
+          <div class="timeline-nav">
+            <div class="nav-prev">
+              <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+                <path d="M9 1L1 8L9 15" stroke="#383838" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              <span class="nav-lbl nav-lbl--prev">PREV</span>
+            </div>
+            <div class="nav-next">
+              <span class="nav-lbl nav-lbl--next">NEXT</span>
+              <span class="nav-yr">1991</span>
+              <svg width="10" height="16" viewBox="0 0 10 16" fill="none">
+                <path d="M1 1L9 8L1 15" stroke="#FF9D00" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="gallery-section">
+
+            <div class="btn-row">
+              <a href="#" class="pill-btn">
+                <span class="pill-btn-arrow" aria-hidden="true"></span>
+                <span class="pill-btn-text">HISTORY TOPへ戻る</span>
+              </a>
+              <a href="#" class="pill-btn">
+                <span class="pill-btn-arrow" aria-hidden="true"></span>
+                <span class="pill-btn-text">ティザーTOPへ戻る</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER (block độc lập cấp .page, full-width, mx auto) -->
+    <div class="footer-block">
+
+      <div class="follow-wrap">
+        <div class="follow-inner">
+          <div class="follow-copy">
+            <p class="follow-title">FOLLOW</p>
+            <p class="follow-sub">フォローして続報をお見逃しなく</p>
+          </div>
+          <img class="social-icons" src="assets/images/social-icons-desktop.png"
+            data-src-desktop="assets/images/social-icons-desktop.png"
+            data-src-mobile="assets/images/social-icons-mobile.png"
+            alt="X, Facebook, YouTube, Instagram">
+        </div>
+      </div>
+
+      <a href="#" class="back-btn" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+          <path d="M12.5 20V5" stroke="#000" stroke-width="2" stroke-linecap="round" />
+          <path d="M6 11L12.5 5L19 11" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <span class="back-btn-text back-btn-text--desktop">ページ上部へ戻る</span>
+        <span class="back-btn-text back-btn-text--mobile">Back to top</span>
+      </a>
+
+      <img class="footer-car" src="assets/images/footer-car-52ab45.png" alt="">
+
+    </div>
+
+    <!-- MOBILE COPYRIGHT (hidden on desktop) -->
+    <div class="mobile-copyright">
+      <div class="mobile-copyright-inner">
+        <div class="mobile-policy-row">
+          <a href="#" class="mobile-policy-link">Privacy Policy</a>
+          <a href="#" class="mobile-policy-link">Cookie Policy</a>
+        </div>
+        <p class="mobile-copyright-text">© MITSUBISHI MOTORS CORPORATION.<br>All rights reserved.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Artboard cố định 1366px (desktop) / 375px (mobile).
+    // Scale .page cho vừa chiều rộng viewport ở desktop để không vỡ ở 1920+,
+    // giữ nguyên CSS mobile ở ≤768px.
+    (function () {
+      var DESIGN_WIDTH = 1366;
+      var MOBILE_MAX = 768;
+
+      // Responsive asset swap via data-set (data-src-desktop / data-src-mobile)
+      var swapNodes = document.querySelectorAll('[data-src-desktop][data-src-mobile]');
+      function swapAssets(isMobile) {
+        swapNodes.forEach(function (img) {
+          var next = isMobile ? img.dataset.srcMobile : img.dataset.srcDesktop;
+          if (next && img.getAttribute('src') !== next) {
+            img.setAttribute('src', next);
+          }
+        });
+      }
+
+      function fitPage() {
+        var page = document.querySelector('.page');
+        if (!page) return;
+        var w = document.documentElement.clientWidth;
+        var isMobile = w <= MOBILE_MAX;
+        if (!isMobile) {
+          page.style.zoom = w / DESIGN_WIDTH;
+        } else {
+          page.style.zoom = '';
+        }
+        swapAssets(isMobile);
+      }
+      window.addEventListener('resize', fitPage);
+      window.addEventListener('orientationchange', fitPage);
+      fitPage();
+    })();
+  </script>
+</body>
+
+</html>
