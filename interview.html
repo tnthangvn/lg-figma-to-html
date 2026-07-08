@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTERVIEW #01 — 三菱自動車の象徴「パジェロ」復活への決意</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --accent: #FF9D00;
+      --text: #DADADA;
+      --white: #FFFFFF;
+      --gray: #D3D3D3;
+      --bg: #000000;
+      --glow: 0 0 4px rgba(255, 157, 0, 0.9);
+      --font-jp: 'Noto Sans JP', sans-serif;
+      --font-serif: 'Noto Serif JP', serif;
+      --font-mmc: 'MMC', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-serif);
+      overflow-x: hidden;
+    }
+
+    /* PAGE — fixed 1366 artboard, scaled via zoom (same pattern as index.html) */
+    .page {
+      position: relative;
+      width: 1366px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== HEADER (reused from index.html) ===== */
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      display: flex;
+      align-items: stretch;
+      z-index: 50;
+    }
+
+    .header-logo {
+      width: 115px;
+      height: 100px;
+      flex-shrink: 0;
+    }
+
+    .header-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .header-spacer {
+      flex: 1;
+    }
+
+    .header-menu {
+      width: 115px;
+      height: 100px;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .header-menu img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ===== HERO ===== */
+    .iv-hero {
+      position: relative;
+      width: 100%;
+      height: 523px;
+      background: #ededed;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .iv-hero img.iv-hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 70% 20%;
+    }
+
+    .iv-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(270deg, rgba(0, 0, 0, 0) 37%, rgba(0, 0, 0, 0.8) 100%);
+      pointer-events: none;
+    }
+
+    .iv-hero-smoke {
+      position: absolute;
+      right: -120px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 605px;
+      height: 340px;
+      opacity: 0.4;
+      mix-blend-mode: plus-lighter;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    .iv-hero-title {
+      position: absolute;
+      left: 52px;
+      top: 329px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.42));
+    }
+
+    .iv-hero-title .jp {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 27px;
+      line-height: 1.5;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      white-space: nowrap;
+    }
+
+    .iv-hero-title .en {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      font-family: var(--font-mmc);
+      color: var(--white);
+    }
+
+    .iv-hero-title .en .lbl {
+      font-size: 45.6px;
+      letter-spacing: 0.1em;
+      line-height: 1;
+    }
+
+    .iv-hero-title .en .num {
+      font-size: 80.57px;
+      letter-spacing: 0.06em;
+      line-height: 1;
+    }
+
+    /* ===== INTRO ===== */
+    .iv-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 100px;
+      margin-top: 96px;
+    }
+
+    .iv-intro-lead {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 1.9;
+      letter-spacing: 0.14em;
+      color: #d1d1d1;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .iv-profile {
+      width: 558px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .iv-profile-img {
+      width: 100%;
+      height: 270px;
+      overflow: hidden;
+      position: relative;
+      background: #d0ccc7;
+    }
+
+    .iv-profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .iv-profile-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .iv-profile-meta {
+      display: flex;
+      gap: 21px;
+      align-items: flex-start;
+    }
+
+    .iv-profile-name {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .iv-profile-role {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+
+    .iv-profile-person {
+      font-family: var(--font-serif);
+      font-size: 27px;
+      letter-spacing: 0.05em;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .iv-profile-bio {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.4;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    /* ===== INDEX ===== */
+    .iv-index {
+      width: 800px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      margin-top: 120px;
+    }
+
+    .iv-hr {
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .iv-hr--sm {
+      width: 300px;
+    }
+
+    .iv-index-title {
+      font-family: var(--font-mmc);
+      font-size: 20px;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .iv-chapters {
+      display: flex;
+      flex-direction: column;
+      gap: 41px;
+    }
+
+    .iv-chapter {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .iv-chapter-no {
+      font-family: var(--font-mmc);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      color: var(--gray);
+    }
+
+    .iv-chapter-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .iv-chapter-ttl {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: 0.15em;
+      color: var(--white);
+      width: 400px;
+    }
+
+    /* HOVER RULE #1 — chevron drops 10px on hover, 0.3s */
+    .iv-chevron {
+      flex-shrink: 0;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .iv-chapter:hover .iv-chevron,
+    .iv-chapter:focus-visible .iv-chevron {
+      transform: translateY(10px);
+    }
+
+    .iv-chapter:focus-visible {
+      outline: 1px solid rgba(255, 255, 255, 0.4);
+      outline-offset: 6px;
+    }
+
+    /* ===== CHAPTER BODY SECTIONS ===== */
+    .iv-body {
+      position: relative;
+      width: 960px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 120px;
+    }
+
+    .iv-chap-block {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+
+    .iv-chap-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .iv-chap-head--rev {
+      flex-direction: row-reverse;
+    }
+
+    .iv-chap-titleblock {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .iv-chap-heading {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 30px;
+      line-height: 1.5;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    .iv-chap-photo {
+      width: 472px;
+      height: 265px;
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .iv-chap-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .iv-chap-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .iv-chap-text {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      font-family: var(--font-jp);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.8;
+      letter-spacing: 0.08em;
+      color: var(--text);
+    }
+
+    .iv-chap-bigimg {
+      width: 758px;
+      height: 426px;
+      overflow: hidden;
+      align-self: center;
+      position: relative;
+    }
+
+    .iv-chap-bigimg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .iv-divider {
+      width: 900px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+      margin: 120px 0;
+    }
+
+    /* decorative smoke behind chapters */
+    .iv-smoke {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.5;
+      mix-blend-mode: plus-lighter;
+      z-index: -1;
+    }
+
+    .iv-smoke--a {
+      width: 340px;
+      right: -140px;
+      top: -60px;
+    }
+
+    .iv-smoke--b {
+      width: 358px;
+      left: -160px;
+      bottom: 120px;
+    }
+
+    /* ===== OTHER DEVELOPERS CARDS ===== */
+    .iv-devs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      margin-top: 120px;
+    }
+
+    .iv-devs-title {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1;
+      letter-spacing: 0.15em;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .iv-cards {
+      display: flex;
+      gap: 40px;
+    }
+
+    .iv-card {
+      position: relative;
+      width: 357px;
+      height: 285px;
+      background: rgba(255, 255, 255, 0.08);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .iv-card-img {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .iv-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+      /* HOVER RULE #2a — image scales to 1.1 on card hover */
+      transition: transform 0.3s ease;
+    }
+
+    .iv-card-img::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .iv-card-no {
+      position: absolute;
+      left: 13.5px;
+      top: -14px;
+      font-family: var(--font-mmc);
+      font-size: 34px;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      z-index: 2;
+    }
+
+    .iv-card-foot {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 20px 20px;
+    }
+
+    .iv-card-name {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      white-space: nowrap;
+    }
+
+    .iv-card-role {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: 11px;
+      line-height: 1;
+      letter-spacing: 0.1em;
+      color: #d4d4d4;
+    }
+
+    .iv-card-person {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      color: var(--white);
+    }
+
+    .iv-card-arrow {
+      flex-shrink: 0;
+      /* HOVER RULE #2b — arrow shifts 10px right on card hover */
+      transition: transform 0.3s ease;
+    }
+
+    .iv-card:hover .iv-card-img img,
+    .iv-card:focus-visible .iv-card-img img {
+      transform: scale(1.1);
+    }
+
+    .iv-card:hover .iv-card-arrow,
+    .iv-card:focus-visible .iv-card-arrow {
+      transform: translateX(10px);
+    }
+
+    .iv-card:focus-visible {
+      outline: 1px solid rgba(255, 255, 255, 0.4);
+      outline-offset: 4px;
+    }
+
+    /* ===== OTHER CONTENTS ===== */
+    .iv-contents {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      margin-top: 160px;
+    }
+
+    .iv-contents-title {
+      font-family: var(--font-mmc);
+      font-size: 24px;
+      letter-spacing: 0.12em;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .iv-banners {
+      display: flex;
+      gap: 40px;
+    }
+
+    .iv-banner {
+      position: relative;
+      width: 360px;
+      height: 240px;
+      overflow: hidden;
+      display: block;
+      /* HOVER RULE #3 — opacity to 70% on hover */
+      transition: opacity 0.3s ease;
+    }
+
+    .iv-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .iv-banner:hover,
+    .iv-banner:focus-visible {
+      opacity: 0.7;
+    }
+
+    .iv-banner-arrow {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      width: 32px;
+      height: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===== BACK TO TOP PILL ===== */
+    .iv-topbtn {
+      width: 360px;
+      height: 68px;
+      margin-top: 120px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .iv-topbtn:hover {
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .iv-topbtn span {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.1em;
+      color: var(--white);
+    }
+
+    /* ===== FOOTER (reused from index.html) ===== */
+    .footer-block {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      margin-top: 120px;
+    }
+
+    .follow-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 50px;
+      padding: 0 173px 120px;
+    }
+
+    .follow-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .follow-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+      width: 242px;
+    }
+
+    .follow-title {
+      font-family: var(--font-mmc);
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.2;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .follow-sub {
+      font-family: var(--font-jp);
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 2.8;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-align: left;
+    }
+
+    .social-icons {
+      width: 312px;
+      height: 42px;
+      display: block;
+    }
+
+    .back-btn {
+      width: 100%;
+      height: 60px;
+      background: #D3D3D3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      box-shadow: 0 0 4px #ED0000;
+    }
+
+    .back-btn-text {
+      font-family: var(--font-jp);
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 1;
+      letter-spacing: 0.05em;
+      color: #000;
+    }
+
+    .back-btn-text--mobile {
+      display: none;
+    }
+
+    .footer-car {
+      width: 100%;
+      height: 645px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .mobile-copyright {
+      display: none;
+    }
+
+    /* ═══════════════════════════ MOBILE ≤ 768px ═══════════════════════════ */
+    @media (max-width: 768px) {
+      .page {
+        width: 375px;
+        align-items: stretch;
+      }
+
+      .site-header {
+        height: 72px;
+      }
+
+      .header-logo {
+        width: 73px;
+        height: 63px;
+      }
+
+      .header-menu {
+        position: absolute;
+        right: 0;
+        left: auto;
+        top: 0;
+        width: 83px;
+        height: 72px;
+      }
+
+      /* HERO */
+      .iv-hero {
+        height: 233px;
+      }
+
+      .iv-hero-smoke {
+        display: none;
+      }
+
+      .iv-hero-title {
+        left: 24px;
+        top: auto;
+        bottom: 20px;
+        gap: 4px;
+      }
+
+      .iv-hero-title .jp {
+        font-size: 16px;
+        white-space: normal;
+      }
+
+      .iv-hero-title .en .lbl {
+        font-size: 26px;
+      }
+
+      .iv-hero-title .en .num {
+        font-size: 46px;
+      }
+
+      /* INTRO */
+      .iv-intro {
+        margin-top: 40px;
+        gap: 40px;
+        padding: 0 24px;
+      }
+
+      .iv-intro-lead {
+        font-size: 13px;
+        white-space: normal;
+        letter-spacing: 0.08em;
+        line-height: 2;
+      }
+
+      .iv-profile {
+        width: 100%;
+      }
+
+      .iv-profile-img {
+        height: 156px;
+      }
+
+      .iv-profile-role {
+        font-size: 11px;
+      }
+
+      .iv-profile-person {
+        font-size: 16px;
+      }
+
+      .iv-profile-bio {
+        font-size: 12px;
+      }
+
+      /* INDEX */
+      .iv-index {
+        width: 100%;
+        padding: 0 24px;
+        margin-top: 64px;
+        gap: 40px;
+      }
+
+      .iv-hr--sm {
+        width: 200px;
+      }
+
+      .iv-index-title {
+        font-size: 18px;
+      }
+
+      .iv-chapters {
+        gap: 32px;
+        width: 100%;
+      }
+
+      .iv-chapter-ttl {
+        width: 219px;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      /* CHAPTER BODY */
+      .iv-body {
+        width: 100%;
+        padding: 0 24px;
+        margin-top: 64px;
+      }
+
+      .iv-chap-block {
+        gap: 24px;
+      }
+
+      .iv-chap-head,
+      .iv-chap-head--rev {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 19px;
+      }
+
+      .iv-chap-heading {
+        font-size: 22px;
+      }
+
+      .iv-chap-photo {
+        width: 100%;
+        height: 184px;
+      }
+
+      .iv-chap-text {
+        font-size: 13px;
+      }
+
+      .iv-chap-bigimg {
+        width: 100%;
+        height: 184px;
+      }
+
+      .iv-divider {
+        width: 100%;
+        margin: 60px 0;
+      }
+
+      .iv-smoke--a {
+        width: 200px;
+        right: -60px;
+      }
+
+      .iv-smoke--b {
+        width: 220px;
+        left: -70px;
+      }
+
+      /* CARDS */
+      .iv-devs {
+        margin-top: 64px;
+        gap: 40px;
+        padding: 0 24px;
+      }
+
+      .iv-cards {
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+      }
+
+      .iv-card {
+        width: 100%;
+        height: 249px;
+      }
+
+      .iv-card-img {
+        height: 180px;
+      }
+
+      .iv-card-no {
+        font-size: 30px;
+      }
+
+      /* OTHER CONTENTS */
+      .iv-contents {
+        margin-top: 80px;
+        padding: 0 24px;
+      }
+
+      .iv-banners {
+        flex-direction: column;
+        gap: 48px;
+        width: 100%;
+      }
+
+      .iv-banner {
+        width: 100%;
+        height: 218px;
+      }
+
+      .iv-topbtn {
+        width: calc(100% - 48px);
+        height: 50px;
+        margin-top: 80px;
+      }
+
+      /* FOOTER (reused mobile styles) */
+      .follow-wrap {
+        padding: 0 0 40px;
+      }
+
+      .follow-inner {
+        gap: 32px;
+      }
+
+      .follow-title {
+        font-size: 20px;
+      }
+
+      .follow-sub {
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        text-align: center;
+      }
+
+      .social-icons {
+        width: 264px;
+        height: 36px;
+      }
+
+      .footer-car {
+        display: none;
+      }
+
+      .back-btn-text--desktop {
+        display: none;
+      }
+
+      .back-btn-text--mobile {
+        display: inline;
+        font-family: var(--font-mmc);
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: 0.05em;
+        color: #000;
+      }
+
+      .mobile-copyright {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        height: 162px;
+        background: #000;
+      }
+
+      .mobile-copyright-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        padding: 50px 20px 0;
+      }
+
+      .mobile-policy-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .mobile-policy-link {
+        font-family: var(--font-mmc);
+        font-weight: 500;
+        font-size: 13px;
+        letter-spacing: 0.05em;
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      .mobile-copyright-text {
+        font-family: var(--font-mmc);
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 1.4;
+        letter-spacing: 0.05em;
+        color: var(--white);
+        text-align: center;
+      }
+    }
+
+    /* accessibility: honor reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+
+      .iv-chevron,
+      .iv-card-img img,
+      .iv-card-arrow,
+      .iv-banner,
+      .iv-topbtn {
+        transition: none !important;
+      }
+
+      .iv-chapter:hover .iv-chevron,
+      .iv-card:hover .iv-card-img img,
+      .iv-card:hover .iv-card-arrow {
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- HEADER (reused) -->
+    <header class="site-header" role="banner">
+      <a href="index.html" class="header-logo" aria-label="Mitsubishi Motors">
+        <img src="assets/images/logo.svg" data-src-desktop="assets/images/logo.svg"
+          data-src-mobile="assets/images/logo-sp.svg" alt="Mitsubishi Motors">
+      </a>
+      <div class="header-spacer"></div>
+      <button class="header-menu" aria-label="メニューを開く">
+        <img src="assets/images/menu-close.svg" data-src-desktop="assets/images/menu-close.svg"
+          data-src-mobile="assets/images/menu-sp.svg" alt="">
+      </button>
+    </header>
+
+    <!-- HERO -->
+    <section class="iv-hero">
+      <img class="iv-hero-photo" src="assets/images/interview/hero.jpg" alt="開発者インタビュー">
+      <img class="iv-hero-smoke" src="assets/images/interview/smoke.png" alt="" aria-hidden="true">
+      <div class="iv-hero-title">
+        <div class="jp">三菱自動車の象徴</div>
+        <div class="jp">「パジェロ」復活への決意</div>
+        <div class="en">
+          <span class="lbl">INTERVIEW</span>
+          <span class="num">#01</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="iv-intro">
+      <p class="iv-intro-lead">
+        あの情熱の結晶が、今、新たな時代を走り出す。<br><br>
+        1982年の誕生以来、過酷な大地で鍛え上げられてきたパジェロのDNA。<br>
+        それは、どんな悪路をもねじ伏せる圧倒的な走破性と、<br>
+        乗る者すべてを包み込む確かな安心感の追求に他ならない。<br><br>
+        単なる懐古ではない。私たちが挑んだのは、<br>
+        歴代パジェロが築き上げた偉大な「原点」をリスペクトしつつ、<br>
+        現代の最新技術によってそれを遥かに凌駕する、まったく新しい本格4WDの姿である。<br>
+        伝統をいかに受け継ぎ、未来へ向けてどう進化させたのか。<br><br>
+        新型パジェロの核心に迫る、開発者の熱き挑戦の記録を、ここに明かす。
+      </p>
+
+      <figure class="iv-profile">
+        <div class="iv-profile-img">
+          <img src="assets/images/interview/intro-video.jpg" alt="開発者">
+        </div>
+        <figcaption class="iv-profile-meta">
+          <div class="iv-profile-name">
+            <span class="iv-profile-role">統括責任者</span>
+            <span class="iv-profile-person">名前 名前</span>
+          </div>
+          <p class="iv-profile-bio">
+            このテキストはダミーです。開発者のプロフィールが入ります。このテキストはダミーです。このテキストはダミーです。
+          </p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- INDEX -->
+    <nav class="iv-index" aria-label="INDEX">
+      <div class="iv-hr"></div>
+      <p class="iv-index-title">INTERVIEW #01</p>
+      <div class="iv-hr iv-hr--sm"></div>
+
+      <div class="iv-chapters">
+        <a href="#chapter01" class="iv-chapter">
+          <span class="iv-chapter-no">Chapter 01</span>
+          <span class="iv-chapter-row">
+            <span class="iv-chapter-ttl">三菱自動車の象徴 「パジェロ」復活への決意</span>
+            <svg class="iv-chevron" width="12" height="6" viewBox="0 0 12 6" fill="none" aria-hidden="true">
+              <path d="M1 1L6 5L11 1" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a href="#chapter02" class="iv-chapter">
+          <span class="iv-chapter-no">Chapter 02</span>
+          <span class="iv-chapter-row">
+            <span class="iv-chapter-ttl">期待を超える進化とフラッグシップにふさわしい上質さ</span>
+            <svg class="iv-chevron" width="12" height="6" viewBox="0 0 12 6" fill="none" aria-hidden="true">
+              <path d="M1 1L6 5L11 1" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      </div>
+
+      <div class="iv-hr"></div>
+    </nav>
+
+    <!-- CHAPTER BODY -->
+    <div class="iv-body">
+      <img class="iv-smoke iv-smoke--a" src="assets/images/interview/smoke.png" alt="" aria-hidden="true">
+      <img class="iv-smoke iv-smoke--b" src="assets/images/interview/smoke.png" alt="" aria-hidden="true">
+
+      <!-- Chapter 01 -->
+      <section class="iv-chap-block" id="chapter01">
+        <div class="iv-chap-head">
+          <div class="iv-chap-titleblock">
+            <span class="iv-chapter-no">Chapter 01</span>
+            <h2 class="iv-chap-heading">三菱自動車の象徴<br>「パジェロ」復活への決意</h2>
+          </div>
+          <div class="iv-chap-photo">
+            <img src="assets/images/interview/chapter01.jpg" alt="">
+          </div>
+        </div>
+        <div class="iv-chap-text">
+          <p>パジェロは1982年のデビュー以来、三菱自動車を象徴するモデルであり続けました。2019年に日本での販売が終了した際、私は商品戦略の立場から、もう一度パジェロを世に送り出さなければと考え続けていました。また、お客様からの期待の声も私たちの耳に届いていました。</p>
+          <p>世界を見渡すと、SUVの市場は激戦が続いています。本格オフローダーの市場も徐々に広がる中で、いよいよ三菱自動車の新たな象徴となるモデルを開発しようという機運が社内で高まり、新型パジェロの開発がスタートしたのです。</p>
+        </div>
+      </section>
+
+      <div class="iv-divider"></div>
+
+      <!-- Chapter 02 -->
+      <section class="iv-chap-block" id="chapter02">
+        <div class="iv-chap-head iv-chap-head--rev">
+          <div class="iv-chap-titleblock">
+            <span class="iv-chapter-no">Chapter 02</span>
+            <h2 class="iv-chap-heading">期待を超える進化と<br>フラッグシップにふさわしい<br>上質さ</h2>
+          </div>
+          <div class="iv-chap-photo">
+            <img src="assets/images/interview/chapter02.jpg" alt="">
+          </div>
+        </div>
+        <div class="iv-chap-text">
+          <p>パジェロは歴史が長く、世界中のお客様から支持されていたモデルです。そのため、お客様の世代や暮らしている環境によって、いろいろなパジェロ像があります。それを考えながら、誰が乗っても「これはパジェロだ」と感じてもらえるものを作ることは大きなプレッシャーでした。そして、新しいパジェロでどういう方向性を打ち出せばお客様の期待を超えられるかということを考え抜き、「誰もがどこにでも行ける安心感」「日常でも当たり前に気持ちよく使える快適性」「新たな一歩を踏み出すワクワク感」を高次元で融合したオールラウンドSUVというコンセプトを継承する。さらにそれらを現代の革新的な技術で進化させるという結論に達しました。</p>
+          <p>そして、もうひとつ新しいパジェロになくてはならないもの。それは三菱自動車のフラッグシップモデルにふさわしい上質さです。誰でも、どんな道でも安心して運転できる、パジェロの良さをさらなる高みに引き上げています。たとえばボディは大型化していますが、運転すると取り回しの良さに驚くはずです。歴代モデルが大切にしてきた部分を一つずつ進化させる。この地道な積み重ねにより、これからの三菱自動車を象徴する新型パジェロが完成しました。初代パジェロがそうであるように、新型パジェロも乗る人の冒険心や挑戦する気持ちを後押しし、20年、30年後も語り継がれるモデルになる。私はそう自負しています。</p>
+        </div>
+        <div class="iv-chap-bigimg">
+          <img src="assets/images/interview/big-car.jpg" alt="">
+        </div>
+      </section>
+    </div>
+
+    <!-- OTHER DEVELOPERS -->
+    <section class="iv-devs">
+      <p class="iv-devs-title">他の開発者のインタビューを読む</p>
+      <div class="iv-cards">
+        <a href="#" class="iv-card">
+          <span class="iv-card-no">#02</span>
+          <div class="iv-card-img">
+            <img src="assets/images/interview/card02.jpg" alt="">
+          </div>
+          <div class="iv-card-foot">
+            <div class="iv-card-name">
+              <span class="iv-card-role">技術開発チーフ</span>
+              <span class="iv-card-person">名前 名前</span>
+            </div>
+            <svg class="iv-card-arrow" width="14" height="35" viewBox="0 0 14 35" fill="none" aria-hidden="true">
+              <path d="M1 1L12.5 17.5L1 34" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+        <a href="#" class="iv-card">
+          <span class="iv-card-no">#03</span>
+          <div class="iv-card-img">
+            <img src="assets/images/interview/card03.jpg" alt="">
+          </div>
+          <div class="iv-card-foot">
+            <div class="iv-card-name">
+              <span class="iv-card-role">デザイン責任者</span>
+              <span class="iv-card-person">名前 名前</span>
+            </div>
+            <svg class="iv-card-arrow" width="14" height="35" viewBox="0 0 14 35" fill="none" aria-hidden="true">
+              <path d="M1 1L12.5 17.5L1 34" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- OTHER CONTENTS -->
+    <section class="iv-contents">
+      <p class="iv-contents-title">OTHER CONTENTS</p>
+      <div class="iv-banners">
+        <a href="#" class="iv-banner">
+          <img src="assets/images/interview/other-history.jpg" alt="PAJERO HISTORY">
+          <span class="iv-banner-arrow" aria-hidden="true">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
+              <path d="M1 1L6 6L1 11" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a href="#" class="iv-banner">
+          <img src="assets/images/interview/other-event.jpg" alt="新型PAJERO 世界最速体験会">
+          <span class="iv-banner-arrow" aria-hidden="true">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
+              <path d="M1 1L6 6L1 11" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+        <a href="#" class="iv-banner">
+          <img src="assets/images/interview/other-dna.jpg" alt="PAJERO DNA">
+          <span class="iv-banner-arrow" aria-hidden="true">
+            <svg width="7" height="12" viewBox="0 0 7 12" fill="none">
+              <path d="M1 1L6 6L1 11" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- BACK TO TOP PILL -->
+    <a href="#" class="iv-topbtn" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+      <svg width="10" height="12" viewBox="0 0 10 12" fill="none" aria-hidden="true">
+        <path d="M5 11V1M1 5L5 1L9 5" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      <span>TOPへ戻る</span>
+    </a>
+
+    <!-- FOOTER (reused from index.html) -->
+    <div class="footer-block">
+      <div class="follow-wrap">
+        <div class="follow-inner">
+          <div class="follow-copy">
+            <p class="follow-title">FOLLOW</p>
+            <p class="follow-sub">フォローして続報をお見逃しなく</p>
+          </div>
+          <img class="social-icons" src="assets/images/social-icons-desktop.png"
+            data-src-desktop="assets/images/social-icons-desktop.png"
+            data-src-mobile="assets/images/social-icons-mobile.png" alt="X, Facebook, YouTube, Instagram">
+        </div>
+      </div>
+
+      <a href="#" class="back-btn" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+        <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
+          <path d="M12.5 20V5" stroke="#000" stroke-width="2" stroke-linecap="round" />
+          <path d="M6 11L12.5 5L19 11" stroke="#000" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <span class="back-btn-text back-btn-text--desktop">ページ上部へ戻る</span>
+        <span class="back-btn-text back-btn-text--mobile">Back to top</span>
+      </a>
+
+      <img class="footer-car" src="assets/images/footer-car-52ab45.png" alt="">
+    </div>
+
+    <!-- MOBILE COPYRIGHT (reused) -->
+    <div class="mobile-copyright">
+      <div class="mobile-copyright-inner">
+        <div class="mobile-policy-row">
+          <a href="#" class="mobile-policy-link">Privacy Policy</a>
+          <a href="#" class="mobile-policy-link">Cookie Policy</a>
+        </div>
+        <p class="mobile-copyright-text">© MITSUBISHI MOTORS CORPORATION.<br>All rights reserved.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Fixed 1366px (desktop) / 375px (mobile) artboard — same scaling as index.html
+    (function () {
+      var DESIGN_WIDTH = 1366;
+      var MOBILE_MAX = 768;
+
+      var swapNodes = document.querySelectorAll('[data-src-desktop][data-src-mobile]');
+      function swapAssets(isMobile) {
+        swapNodes.forEach(function (img) {
+          var next = isMobile ? img.dataset.srcMobile : img.dataset.srcDesktop;
+          if (next && img.getAttribute('src') !== next) img.setAttribute('src', next);
+        });
+      }
+
+      function fitPage() {
+        var page = document.querySelector('.page');
+        if (!page) return;
+        var w = document.documentElement.clientWidth;
+        var isMobile = w <= MOBILE_MAX;
+        page.style.zoom = isMobile ? '' : (w / DESIGN_WIDTH);
+        swapAssets(isMobile);
+      }
+      window.addEventListener('resize', fitPage);
+      window.addEventListener('orientationchange', fitPage);
+      fitPage();
+    })();
+  </script>
+</body>
+
+</html>
